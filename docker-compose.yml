@@ -18,7 +18,9 @@ services:
     networks:
       - back
   daphne:
-    image: farqlia/daphne
+    image: "637423251640.dkr.ecr.us-east-1.amazonaws.com/myfront:v4"
+    environment:
+      - PUBLIC_IP=${PUBLIC_IP}
     ports:
       - "9542:9542"
     depends_on:
