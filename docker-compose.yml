@@ -3,7 +3,7 @@ version: "3"
 # TODO: add db
 services:
   nginx:
-    image: farqlia/nginx
+    image: farqlia/nginx:v1
     ports:
       # maps {HOST_PORT}:{CONTAINER_PORT}
       - "81:81"
@@ -18,7 +18,7 @@ services:
     networks:
       - back
   daphne:
-    image: "637423251640.dkr.ecr.us-east-1.amazonaws.com/myfront:v4"
+    image: farqlia/daphne:v1
     environment:
       - PUBLIC_IP=${PUBLIC_IP}
     ports:
