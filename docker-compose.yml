@@ -18,9 +18,16 @@ services:
     networks:
       - back
   daphne:
-    image: farqlia/daphne:v1
+    image: farqlia/daphne:v2
     environment:
       - PUBLIC_IP=${PUBLIC_IP}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - HOST=${HOST}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
     ports:
       - "9542:9542"
     depends_on:
